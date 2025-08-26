@@ -1,0 +1,215 @@
+:root {
+  --white: #fff;
+  --black: #121212;
+  --wine-red: #9B1C2F;
+  --wine-red-light: #bf4150;
+  --gray-light: #e0e0e0;
+  --gray-mid: #b0b0b0;
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --header-padding-top: 3rem;
+  --header-padding-bottom: 2rem;
+  --header-padding-side: 1rem;
+  --header-height: auto;        /* You can change to fixed values like 100px */
+  --header-width: 100%;         /* Can be adjusted to smaller widths */
+  --header-font-size: clamp(2rem, 6vw, 3.8rem);
+}
+
+*,*::before,*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--white);
+  color: var(--black);
+  overflow-x: hidden;
+}
+
+header {
+  padding: 3rem 1rem 2rem;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  font-size: clamp(2rem, 6vw, 3.8rem);
+  color: var(--wine-red);
+  text-transform: uppercase;
+  user-select: none;
+  position: sticky;
+  top: 0;
+  background: var(--white);
+  border-bottom: 1.8px solid var(--wine-red);
+  z-index: 10;
+}
+
+main {
+  max-width: 820px;
+  margin: 2.5rem auto 6rem;
+  padding: 0 1rem;
+}
+
+h2 {
+  font-weight: 800;
+  font-family: var(--font-mono);
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  margin-bottom: 2rem;
+  color: var(--wine-red);
+  text-align: center;
+  letter-spacing: 0.1em;
+  user-select: none;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--black);
+  max-width: 720px;
+  margin: 0 auto 3rem auto;
+  text-align: justify;
+}
+
+ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.75rem;
+  padding: 0;
+  margin: 0 0 3rem 0;
+  list-style-type: none;
+}
+
+li {
+  background: var(--white);
+  border: 2px solid var(--wine-red);
+  border-radius: 15px;
+  padding: 1.6rem 1rem;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--wine-red);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+li:hover {
+  background: var(--wine-red);
+  color: var(--white);
+  box-shadow: 0 0 10px var(--wine-red-light);
+  transform: translateY(-5px);
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.project-card {
+  background: var(--white);
+  border: 2px solid var(--wine-red);
+  border-radius: 10px;
+  padding: 1.25rem 1rem;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--wine-red);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  background: var(--wine-red);
+  color: var(--white);
+  box-shadow: 0 0 10px var(--wine-red-light);
+}
+
+/* Contact form styles */
+form {
+  max-width: 480px;
+  margin: 0 auto 3rem;
+  padding: 2rem 2.5rem;
+  border-radius: 15px;
+  border: 2px solid var(--wine-red);
+  box-shadow: 0 0 20px rgba(155,28,47,0.6);
+  background: var(--white);
+}
+
+label {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--wine-red);
+  margin-bottom: 0.75rem;
+  display: block;
+  user-select: none;
+}
+
+input,
+textarea {
+  width: 100%;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.4rem;
+  border-radius: 10px;
+  border: 2px solid var(--wine-red);
+  background: transparent;
+  color: var(--black);
+  resize: vertical;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--wine-red-light);
+  box-shadow: 0 0 12px var(--wine-red-light);
+}
+
+button {
+  background: var(--wine-red);
+  border: none;
+  border-radius: 15px;
+  color: var(--white);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  padding: 1rem;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+button:hover {
+  background: var(--wine-red-light);
+}
+
+footer {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--wine-red);
+  user-select: none;
+}
+
+footer a {
+  color: var(--wine-red);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Particle background canvas settings */
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
